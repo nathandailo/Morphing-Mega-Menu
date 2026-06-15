@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floating Mega Menu Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">A floating mega menu that morphs into shape.</h1>
+      <p class="hero__subtitle">
+        Hover over the navigation above to explore six submenu styles,
+        all sharing one shell that morphs and slides between parents,
+        with some items drilling into a third level. See how it all
+        works below.
+      </p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--primary btn--lg">Primary</a>
+        <a href="#" class="btn btn--ghost btn--lg">Secondary</a>
+      </div>
+      <button type="button" class="hero__scroll-down" id="hero-scroll-down" aria-label="Scroll to documentation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <main class="page" id="docs">
+    <div class="page__inner">
+      <header class="docs__header">
+        <h2 class="docs__title">How this navigation works</h2>
+        <p class="docs__intro">
+          The nav stays fixed and floating above this content. Below is a
+          breakdown of how each part behaves.
+        </p>
+      </header>
+
+      <div class="docs__grid">
+        <article class="docs__card">
+          <h3>Six submenu styles</h3>
+          <p>Each top-level parent opens one of six layouts:</p>
+          <ul>
+            <li><strong>Image grid</strong>: a grid of cards with thumbnails, titles and descriptions.</li>
+            <li><strong>CTA + image grid</strong>: the same cards alongside a promotional CTA panel.</li>
+            <li><strong>Icon grid</strong>: a grid of icon, title and description links.</li>
+            <li><strong>CTA + icon grid</strong>: icon links alongside a CTA panel.</li>
+            <li><strong>Compact icons</strong>: a narrow dropdown of icon and text rows.</li>
+            <li><strong>Compact links</strong>: a narrow dropdown of plain text links.</li>
+          </ul>
+        </article>
+
+        <article class="docs__card">
+          <h3>One shell, sliding between parents</h3>
+          <p>
+            Every submenu renders inside the same panel "shell" rather than
+            each parent owning its own dropdown. Hovering a different
+            parent slides the current content out and the new content in
+            from the matching side, while the shell itself resizes and
+            repositions to fit the new layout, with mega grids on one side
+            and narrow compact dropdowns on the other.
+          </p>
+        </article>
+
+        <article class="docs__card">
+          <h3>Drilling into a third level</h3>
+          <p>
+            Some items show an arrow indicating they open a third level.
+            Clicking one morphs the shell into a compact dropdown anchored
+            beneath that item's parent, with a back link at the top to
+            return.
+          </p>
+          <p>
+            Because the dropdown can land away from the cursor, a third-level
+            view stays open ("pinned") until you click the back link, click
+            elsewhere on the page, or press Escape. It won't disappear just
+            because the mouse drifts off the nav. Going back morphs the
+            shell to a full mega layout, or keeps it compact if the parent
+            was already a compact-style menu.
+          </p>
+        </article>
+
+        <article class="docs__card">
+          <h3>Mobile drill navigation</h3>
+          <p>
+            On smaller screens the menu becomes a sliding, full-width
+            drill-down: parents slide to children, and children with their
+            own third level slide further to subchildren. The nav bar's
+            back button steps back one level at a time, and while viewing a
+            third level it relabels itself with that item's parent name
+            (truncated with an ellipsis if it's longer than four words).
+          </p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Nathan Dailo. Free to use for personal and commercial projects.</p>
+      <button type="button" class="site-footer__link" id="license-link">MIT License</button>
+    </div>
+  </footer>
+
+  <div class="license-modal" id="license-modal" aria-hidden="true">
+    <div class="license-modal__overlay" id="license-modal-overlay"></div>
+    <div class="license-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="license-modal-title">
+      <div class="license-modal__header">
+        <h2 id="license-modal-title">MIT License</h2>
+        <button type="button" class="license-modal__close" id="license-modal-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="license-modal__body">
+        <p>Copyright (c) 2026 Nathan Dailo</p>
+        <p>
+          Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files (the "Software"), to deal
+          in the Software without restriction, including without limitation the rights
+          to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+          copies of the Software, and to permit persons to whom the Software is
+          furnished to do so, subject to the following conditions:
+        </p>
+        <p>
+          The above copyright notice and this permission notice shall be included in all
+          copies or substantial portions of the Software.
+        </p>
+        <p>
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+          AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+          LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+          OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+          SOFTWARE.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="floating-mega-nav" id="floating-mega-nav" aria-label="Primary">
+    <div class="floating-mega-nav__bar">
+      <a href="#" class="floating-mega-nav__logo" aria-label="Home">Logo</a>
+
+      <ul class="floating-mega-nav__parents" id="floating-mega-nav-parents"></ul>
+
+      <div class="floating-mega-nav__actions">
+        <a href="#" class="btn btn--ghost btn--sm">Secondary</a>
+        <a href="#" class="btn btn--primary btn--sm">Primary</a>
+      </div>
+
+      <div class="floating-mega-nav__mobile-controls">
+        <button type="button" class="floating-mega-nav__mobile-back" id="floating-mega-nav-mobile-back" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>
+          <span id="floating-mega-nav-mobile-back-label">Back</span>
+        </button>
+
+        <button
+          type="button"
+          class="floating-mega-nav__menu-toggle"
+          id="floating-mega-nav-menu-toggle"
+          aria-expanded="false"
+          aria-controls="floating-mega-nav-mobile"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          Menu
+        </button>
+      </div>
+    </div>
+
+    <div class="floating-mega-nav__panel" id="floating-mega-nav-panel" role="region" aria-hidden="true">
+      <div class="floating-mega-nav__panel-inner" id="floating-mega-nav-panel-inner"></div>
+    </div>
+
+    <div class="floating-mega-nav__mobile" id="floating-mega-nav-mobile" aria-hidden="true">
+      <div class="floating-mega-nav__mobile-viewport">
+        <div class="floating-mega-nav__mobile-track" id="floating-mega-nav-mobile-track">
+          <div class="floating-mega-nav__mobile-view floating-mega-nav__mobile-view--parents">
+            <ul class="floating-mega-nav__mobile-parents" id="floating-mega-nav-mobile-parents"></ul>
+          </div>
+          <div class="floating-mega-nav__mobile-view floating-mega-nav__mobile-view--children">
+            <div class="floating-mega-nav__mobile-children" id="floating-mega-nav-mobile-children"></div>
+          </div>
+          <div class="floating-mega-nav__mobile-view floating-mega-nav__mobile-view--subchildren">
+            <div class="floating-mega-nav__mobile-children" id="floating-mega-nav-mobile-subchildren"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="floating-mega-nav__mobile-actions">
+        <a href="#" class="btn btn--ghost">Secondary</a>
+        <a href="#" class="btn btn--primary">Primary</a>
+      </div>
+    </div>
+  </nav>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

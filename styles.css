@@ -1,0 +1,1196 @@
+/* Reset & base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  color: #1a1a2e;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Design tokens */
+
+:root {
+  --nav-max-width: 1280px;
+  --nav-radius: 10px;
+  --nav-top: 24px;
+  --nav-side-gap: 16px;
+
+  --compact-width: 320px;
+
+  --morph-duration: 0.4s;
+  --ease-morph: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --panel-bg: #ffffff;
+  --panel-border: #ececef;
+  --hover-bg: #f3f3f6;
+  --text-muted: #6b6b7a;
+
+  --shadow-nav: 0 1px 2px rgba(20, 20, 40, 0.04), 0 12px 32px -16px rgba(20, 20, 40, 0.14);
+  --shadow-panel: 0 24px 24px -8px rgba(20, 20, 40, 0.18), 0 8px 12px -4px rgba(20, 20, 40, 0.08);
+
+  --accent: #3f3f46;
+  --accent-dark: #000000;
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-top) + 96px) 16px 96px;
+  background: #000000;
+  text-align: center;
+}
+
+.hero__scroll-down {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero__scroll-down:hover,
+.hero__scroll-down:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  outline: none;
+}
+
+.hero__scroll-down svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hero__inner {
+  width: min(var(--nav-max-width), calc(100vw - 32px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  color: #ffffff;
+}
+
+.hero__title {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 16ch;
+}
+
+.hero__subtitle {
+  max-width: 46ch;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn--sm {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.btn--lg {
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.btn--primary {
+  background: #1a1a2e;
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: inherit;
+  border-color: rgba(120, 120, 140, 0.18);
+}
+
+.btn--ghost:hover {
+  background: var(--hover-bg);
+}
+
+.hero .btn--ghost {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.hero .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero .btn--primary {
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+.hero .btn--primary:hover {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+/* Page content: nav documentation (below hero) */
+
+.page {
+  background: #f7f7fb;
+  padding: 80px 16px;
+}
+
+.page__inner {
+  width: min(var(--nav-max-width), calc(100vw - 32px));
+  margin: 0 auto;
+}
+
+.docs__header {
+  max-width: 60ch;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.docs__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.docs__intro {
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  margin: 0;
+}
+
+.docs__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.docs__card {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--nav-radius);
+  padding: 24px;
+}
+
+.docs__card h3 {
+  margin: 0 0 8px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.docs__card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.docs__card p + p {
+  margin-top: 12px;
+}
+
+.docs__card ul {
+  margin: 8px 0 0;
+  padding-left: 1.1em;
+  list-style: disc;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.docs__card li + li {
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .docs__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+
+.site-footer {
+  background: #f7f7fb;
+  border-top: 1px solid var(--panel-border);
+}
+
+.site-footer__inner {
+  width: min(var(--nav-max-width), calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.site-footer__link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--panel-border);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.site-footer__link {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.site-footer__link:hover,
+.site-footer__link:focus-visible {
+  color: #1a1a2e;
+  text-decoration-color: currentColor;
+  outline: none;
+}
+
+/* License modal */
+
+.license-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.license-modal.is-open {
+  display: flex;
+}
+
+.license-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 40, 0.5);
+}
+
+.license-modal__dialog {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 28px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--nav-radius);
+  box-shadow: var(--shadow-panel);
+}
+
+.license-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.license-modal__header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.license-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--panel-border);
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.2s ease;
+}
+
+.license-modal__close:hover,
+.license-modal__close:focus-visible {
+  background: var(--hover-bg);
+  outline: none;
+}
+
+.license-modal__close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.license-modal__body p {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.license-modal__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Floating mega nav: shell + positioning */
+
+.floating-mega-nav {
+  position: fixed;
+  top: var(--nav-top);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(var(--nav-max-width), calc(100vw - 32px));
+  z-index: 1000;
+}
+
+.floating-mega-nav__bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--nav-radius);
+  box-shadow: var(--shadow-nav);
+  padding: 10px 12px 10px 16px;
+}
+
+/* The bar's bottom corner radius and bottom border are morphed via GSAP in
+   script.js, kept in sync with the panel's open/close animation so the bar
+   and panel read as one connected shape rather than two separate pieces. */
+
+/* Logo */
+
+.floating-mega-nav__logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #000000;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: -0.02em;
+}
+
+/* Parent nav items */
+
+.floating-mega-nav__parents {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  justify-content: center;
+}
+
+.floating-mega-nav__parent {
+  appearance: none;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a2e;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.floating-mega-nav__parent:hover,
+.floating-mega-nav__parent:focus-visible,
+.floating-mega-nav__parent[aria-expanded='true'] {
+  background: var(--hover-bg);
+  outline: none;
+}
+
+/* Action buttons */
+
+.floating-mega-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Mobile menu toggle (shown below the responsive breakpoint) */
+
+.floating-mega-nav__mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.floating-mega-nav__menu-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  appearance: none;
+  background: none;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.floating-mega-nav__menu-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.floating-mega-nav__menu-toggle:hover,
+.floating-mega-nav__menu-toggle:focus-visible,
+.floating-mega-nav__menu-toggle[aria-expanded='true'] {
+  background: var(--hover-bg);
+  outline: none;
+}
+
+/* Shared mega menu panel (the morphing shell) */
+
+.floating-mega-nav__panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-top: none;
+  box-shadow: var(--shadow-panel);
+  border-radius: 0 0 var(--nav-radius) var(--nav-radius);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 3;
+  height: 0;
+}
+
+.floating-mega-nav__panel.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Compact dropdowns (styles 5 & 6) shrink to a fixed width and reposition
+   under the active parent item via an inline transform set by JS. */
+.floating-mega-nav__panel.is-compact {
+  border-radius: 0 0 var(--nav-radius) var(--nav-radius);
+}
+
+/* Connector "tucked under the nav" effect for compact panels: two small
+   inverted-corner notches bridge the gap between the bar's bottom edge and
+   the panel's flat top edge, at the x-offsets supplied via custom props.
+   Fallback note: if this mask effect ever looks off on a given browser,
+   it can be removed entirely and the panel will simply read as a flat
+   detached dropdown -- no structural changes required. */
+.floating-mega-nav__panel.is-compact.is-attached::before,
+.floating-mega-nav__panel.is-compact.is-attached::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: var(--nav-radius);
+  height: var(--nav-radius);
+  background: var(--panel-bg);
+  pointer-events: none;
+}
+
+.floating-mega-nav__panel.is-compact.is-attached::before {
+  left: var(--notch-left, 0px);
+  -webkit-mask: radial-gradient(circle var(--nav-radius) at 0 0, transparent 99%, #000 100%);
+  mask: radial-gradient(circle var(--nav-radius) at 0 0, transparent 99%, #000 100%);
+}
+
+.floating-mega-nav__panel.is-compact.is-attached::after {
+  left: var(--notch-right, 0px);
+  -webkit-mask: radial-gradient(circle var(--nav-radius) at 100% 0, transparent 99%, #000 100%);
+  mask: radial-gradient(circle var(--nav-radius) at 100% 0, transparent 99%, #000 100%);
+}
+
+.floating-mega-nav__panel-inner {
+  padding: 28px;
+  display: grid;
+  gap: 8px;
+}
+
+/* Mobile menu (shell shown below the responsive breakpoint) */
+
+.floating-mega-nav__mobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-top: none;
+  box-shadow: var(--shadow-panel);
+  border-radius: 0 0 var(--nav-radius) var(--nav-radius);
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.floating-mega-nav__mobile.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-mega-nav__mobile-viewport {
+  position: relative;
+  overflow: hidden;
+  height: min(60vh, 420px);
+}
+
+.floating-mega-nav__mobile-track {
+  position: relative;
+  height: 100%;
+}
+
+.floating-mega-nav__mobile-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  overflow-y: auto;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-mega-nav__mobile-view--children,
+.floating-mega-nav__mobile-view--subchildren {
+  transform: translateX(100%);
+}
+
+.floating-mega-nav__mobile.is-showing-children .floating-mega-nav__mobile-view--parents {
+  transform: translateX(-100%);
+}
+
+.floating-mega-nav__mobile.is-showing-children .floating-mega-nav__mobile-view--children {
+  transform: translateX(0);
+}
+
+.floating-mega-nav__mobile.is-showing-subchildren .floating-mega-nav__mobile-view--children {
+  transform: translateX(-100%);
+}
+
+.floating-mega-nav__mobile.is-showing-subchildren .floating-mega-nav__mobile-view--subchildren {
+  transform: translateX(0);
+}
+
+.floating-mega-nav__mobile-parents {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.floating-mega-nav__mobile-parent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  appearance: none;
+  background: none;
+  border: none;
+  font: inherit;
+  text-align: left;
+  padding: 14px 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.floating-mega-nav__mobile-parent svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+}
+
+.floating-mega-nav__mobile-parent:hover,
+.floating-mega-nav__mobile-parent:focus-visible {
+  background: var(--hover-bg);
+  outline: none;
+}
+
+.floating-mega-nav__mobile-back {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  appearance: none;
+  background: none;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease, background 0.2s ease;
+}
+
+.floating-mega-nav__mobile-back svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+#floating-mega-nav-mobile-back-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 38vw;
+}
+
+.floating-mega-nav__mobile-back:hover,
+.floating-mega-nav__mobile-back:focus-visible {
+  background: var(--hover-bg);
+  outline: none;
+}
+
+#floating-mega-nav:has(.floating-mega-nav__mobile.is-showing-children) .floating-mega-nav__mobile-back {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.floating-mega-nav__mobile-children {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.floating-mega-nav__mobile-children .mega-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  min-width: 0;
+}
+
+.floating-mega-nav__mobile-children .mega-card__thumb {
+  width: 56px;
+  height: 56px;
+}
+
+.floating-mega-nav__mobile-children .mega-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.floating-mega-nav__mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--panel-border);
+}
+
+.floating-mega-nav__mobile-actions .btn {
+  width: 100%;
+}
+
+/* Style 1 -- Image card grid */
+
+.panel-content--image-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.mega-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 14px;
+  transition: background 0.25s ease, transform 0.25s var(--ease-morph);
+}
+
+.mega-card:hover,
+.mega-card:focus-visible {
+  background: var(--hover-bg);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.mega-card__thumb {
+  height: 110px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center center;
+  transition: background-position 0.45s var(--ease-morph);
+}
+
+.mega-card:hover .mega-card__thumb,
+.mega-card:focus-visible .mega-card__thumb {
+  background-position: 60% 40%;
+}
+
+.mega-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.mega-card__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.mega-card__chevron {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--accent);
+}
+
+.mega-card__chevron svg {
+  width: 16px;
+  height: 16px;
+}
+
+.thumb--grad-1,
+.thumb--grad-2,
+.thumb--grad-3,
+.thumb--grad-4,
+.thumb--grad-5,
+.thumb--grad-6,
+.thumb--grad-7,
+.thumb--grad-8 {
+  background-image: url('placeholder-image.jpg');
+  background-color: #4a4a52;
+}
+
+/* Style 2 -- CTA intro column + image card grid */
+
+.panel-content--cta-image-grid {
+  grid-template-columns: 260px 1fr;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.cta-image-grid__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 1100px) {
+  .cta-image-grid__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mega-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 14px;
+  background: var(--hover-bg);
+}
+
+.panel-content--cta-image-grid .mega-cta {
+  height: 100%;
+}
+
+.mega-cta__heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mega-cta__body {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.mega-cta__link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.mega-cta__link::after {
+  content: '\2192';
+  transition: transform 0.2s var(--ease-morph);
+}
+
+.mega-cta__link:hover::after {
+  transform: translateX(3px);
+}
+
+/* Style 3 -- Icon link grid */
+
+.panel-content--icon-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+/* Style 4 -- CTA intro column + icon link grid */
+
+.panel-content--cta-icon-grid {
+  grid-template-columns: 260px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.cta-icon-grid__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+/* Icon link item (shared by styles 3, 4, 5) */
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.icon-link:hover,
+.icon-link:focus-visible {
+  background: var(--hover-bg);
+  outline: none;
+}
+
+.icon-link__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--accent);
+}
+
+.icon-link__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-link__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.icon-link__title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.icon-link__desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.icon-link__chevron {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--text-muted);
+}
+
+.icon-link__chevron svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Level-3 submenu (drill-in from an icon-link with children) */
+
+.panel-content--submenu {
+  grid-template-columns: 1fr;
+  gap: 2px;
+  padding: 10px;
+}
+
+.submenu-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--panel-border);
+  transition: background 0.2s ease;
+}
+
+.submenu-back:hover,
+.submenu-back:focus-visible {
+  background: var(--hover-bg);
+  outline: none;
+}
+
+.submenu-back__icon {
+  display: flex;
+  transform: rotate(180deg);
+}
+
+/* When a level-3 view keeps its level-2 menu's own grid layout
+   (item.matchParentStyle), the back row needs to span every column. */
+.panel-content--icon-grid .submenu-back {
+  grid-column: 1 / -1;
+}
+
+.submenu-back__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Styles 5 & 6 -- Compact dropdowns */
+
+.panel-content--compact-icon,
+.panel-content--compact-text {
+  grid-template-columns: 1fr;
+  gap: 2px;
+  padding: 10px;
+}
+
+.compact-text-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.compact-text-link:hover,
+.compact-text-link:focus-visible {
+  background: var(--hover-bg);
+  outline: none;
+}
+
+.compact-text-link span:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.compact-text-link__chevron {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--text-muted);
+}
+
+.compact-text-link__chevron svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Stagger targets (initial state set inline by JS / GSAP) */
+
+.mega-card,
+.icon-link,
+.compact-text-link,
+.mega-cta {
+  will-change: transform, opacity;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-mega-nav__bar,
+  .floating-mega-nav__panel,
+  .floating-mega-nav__mobile,
+  .floating-mega-nav__mobile-view,
+  .mega-card,
+  .mega-card__thumb,
+  .icon-link,
+  .compact-text-link {
+    transition-duration: 0.01ms !important;
+  }
+
+  .floating-mega-nav__panel {
+    transition: opacity 0.15s linear;
+  }
+
+  .mega-card:hover,
+  .mega-card:focus-visible {
+    transform: none;
+  }
+}
+
+/* Responsive */
+
+/* Below this breakpoint the parent items and action buttons move into the
+   slide-out mobile menu, opened via the "Menu" toggle. */
+@media (max-width: 860px) {
+  .floating-mega-nav__parents,
+  .floating-mega-nav__actions {
+    display: none;
+  }
+
+  .floating-mega-nav {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+
+  .floating-mega-nav__bar {
+    padding: 8px 10px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .floating-mega-nav__menu-toggle {
+    display: inline-flex;
+  }
+
+  .floating-mega-nav__mobile-back {
+    display: inline-flex;
+  }
+
+  .floating-mega-nav__mobile {
+    display: flex;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .panel-content--image-grid,
+  .panel-content--icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cta-icon-grid__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
