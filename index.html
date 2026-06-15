@@ -18,8 +18,8 @@
         works below.
       </p>
       <div class="hero__actions">
-        <a href="#" class="btn btn--primary btn--lg">Primary</a>
-        <a href="#" class="btn btn--ghost btn--lg">Secondary</a>
+        <a href="#docs" class="btn btn--primary btn--lg">Learn</a>
+        <a href="https://github.com/nathandailo/Morphing-Mega-Menu" class="btn btn--ghost btn--lg">GitHub</a>
       </div>
       <button type="button" class="hero__scroll-down" id="hero-scroll-down" aria-label="Scroll to documentation">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -99,7 +99,10 @@
   <footer class="site-footer">
     <div class="site-footer__inner">
       <p>&copy; 2026 Nathan Dailo. Free to use for personal and commercial projects.</p>
-      <button type="button" class="site-footer__link" id="license-link">MIT License</button>
+      <div class="site-footer__links">
+        <a class="site-footer__link" href="https://github.com/nathandailo/Morphing-Mega-Menu">GitHub</a>
+        <button type="button" class="site-footer__link" id="license-link">MIT License</button>
+      </div>
     </div>
   </footer>
 
@@ -140,14 +143,221 @@
   </div>
 
   <nav class="floating-mega-nav" id="floating-mega-nav" aria-label="Primary">
+    <div id="mega-nav-content" hidden>
+      <section class="mega-nav-content__menu" data-id="style-1" data-label="Image grid" data-type="image-grid">
+        <ul class="mega-nav-content__items">
+          <li class="mega-nav-content__item" data-image="grad-1">
+            <a href="#">
+              <span class="mega-nav-content__title">Lorem ipsum</span>
+              <span class="mega-nav-content__desc">Dolor sit amet consectetur</span>
+            </a>
+            <ul class="mega-nav-content__children">
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Adipiscing elit sed</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Do eiusmod tempor</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Incididunt ut labore</span></a></li>
+            </ul>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-2">
+            <a href="#"><span class="mega-nav-content__title">Adipiscing elit</span><span class="mega-nav-content__desc">Sed do eiusmod tempor</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-3">
+            <a href="#"><span class="mega-nav-content__title">Incididunt ut</span><span class="mega-nav-content__desc">Labore et dolore magna</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-4">
+            <a href="#"><span class="mega-nav-content__title">Aliqua enim</span><span class="mega-nav-content__desc">Ad minim veniam quis</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-5">
+            <a href="#"><span class="mega-nav-content__title">Nostrud exercitation</span><span class="mega-nav-content__desc">Ullamco laboris nisi</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-6">
+            <a href="#"><span class="mega-nav-content__title">Aliquip ex ea</span><span class="mega-nav-content__desc">Commodo consequat duis</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-7">
+            <a href="#"><span class="mega-nav-content__title">Aute irure dolor</span><span class="mega-nav-content__desc">In reprehenderit voluptate</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-8">
+            <a href="#"><span class="mega-nav-content__title">Velit esse cillum</span><span class="mega-nav-content__desc">Fugiat nulla pariatur</span></a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mega-nav-content__menu" data-id="style-2" data-label="CTA + image grid" data-type="cta-image-grid">
+        <div class="mega-nav-content__cta">
+          <p class="mega-nav-content__cta-heading">Lorem ipsum dolor</p>
+          <p class="mega-nav-content__cta-body">Sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a class="mega-nav-content__cta-link" href="#">Lorem ipsum dolor</a>
+        </div>
+        <ul class="mega-nav-content__items">
+          <li class="mega-nav-content__item" data-image="grad-3">
+            <a href="#">
+              <span class="mega-nav-content__title">Excepteur sint</span>
+              <span class="mega-nav-content__desc">Occaecat cupidatat non</span>
+            </a>
+            <ul class="mega-nav-content__children">
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Proident sunt in</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Culpa qui officia</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Deserunt mollit anim</span></a></li>
+            </ul>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-5">
+            <a href="#"><span class="mega-nav-content__title">Proident sunt</span><span class="mega-nav-content__desc">In culpa qui officia</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-6">
+            <a href="#"><span class="mega-nav-content__title">Deserunt mollit</span><span class="mega-nav-content__desc">Anim id est laborum</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-2">
+            <a href="#"><span class="mega-nav-content__title">Sed ut perspiciatis</span><span class="mega-nav-content__desc">Unde omnis iste natus</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-4">
+            <a href="#"><span class="mega-nav-content__title">Error sit voluptatem</span><span class="mega-nav-content__desc">Accusantium doloremque</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-image="grad-7">
+            <a href="#"><span class="mega-nav-content__title">Laudantium totam</span><span class="mega-nav-content__desc">Rem aperiam eaque ipsa</span></a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mega-nav-content__menu" data-id="style-3" data-label="Icon grid" data-type="icon-grid">
+        <ul class="mega-nav-content__items">
+          <li class="mega-nav-content__item" data-icon="book">
+            <a href="#"><span class="mega-nav-content__title">Lorem ipsum</span><span class="mega-nav-content__desc">Dolor sit amet</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="code">
+            <a href="#"><span class="mega-nav-content__title">Consectetur</span><span class="mega-nav-content__desc">Adipiscing elit</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="layers" data-match-parent-style="true">
+            <a href="#">
+              <span class="mega-nav-content__title">Sed do eiusmod</span>
+              <span class="mega-nav-content__desc">Tempor incididunt</span>
+            </a>
+            <ul class="mega-nav-content__children">
+              <li class="mega-nav-content__item" data-icon="gear">
+                <a href="#"><span class="mega-nav-content__title">Magna aliqua</span><span class="mega-nav-content__desc">Configuration options</span></a>
+              </li>
+              <li class="mega-nav-content__item" data-icon="chart">
+                <a href="#"><span class="mega-nav-content__title">Enim ad minim</span><span class="mega-nav-content__desc">Analytics overview</span></a>
+              </li>
+              <li class="mega-nav-content__item" data-icon="mail">
+                <a href="#"><span class="mega-nav-content__title">Veniam quis nostrud</span><span class="mega-nav-content__desc">Notifications center</span></a>
+              </li>
+              <li class="mega-nav-content__item" data-icon="terminal">
+                <a href="#"><span class="mega-nav-content__title">Exercitation ullamco</span><span class="mega-nav-content__desc">Developer console</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="mega-nav-content__item" data-icon="puzzle">
+            <a href="#"><span class="mega-nav-content__title">Ut labore</span><span class="mega-nav-content__desc">Et dolore magna</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="users">
+            <a href="#"><span class="mega-nav-content__title">Aliqua enim</span><span class="mega-nav-content__desc">Ad minim veniam</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="map">
+            <a href="#">
+              <span class="mega-nav-content__title">Quis nostrud</span>
+              <span class="mega-nav-content__desc">Exercitation ullamco</span>
+            </a>
+            <ul class="mega-nav-content__children">
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Laboris nisi ut</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Aliquip ex ea</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Commodo consequat</span></a></li>
+            </ul>
+          </li>
+          <li class="mega-nav-content__item" data-icon="rocket">
+            <a href="#"><span class="mega-nav-content__title">Laboris nisi</span><span class="mega-nav-content__desc">Ut aliquip ex ea</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="shield">
+            <a href="#"><span class="mega-nav-content__title">Commodo</span><span class="mega-nav-content__desc">Consequat duis aute</span></a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mega-nav-content__menu" data-id="style-4" data-label="CTA + icon grid" data-type="cta-icon-grid">
+        <div class="mega-nav-content__cta">
+          <p class="mega-nav-content__cta-heading">Lorem ipsum dolor</p>
+          <p class="mega-nav-content__cta-body">Sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          <a class="mega-nav-content__cta-link" href="#">Lorem ipsum dolor</a>
+        </div>
+        <ul class="mega-nav-content__items">
+          <li class="mega-nav-content__item" data-icon="star">
+            <a href="#">
+              <span class="mega-nav-content__title">Irure dolor</span>
+              <span class="mega-nav-content__desc">In reprehenderit</span>
+            </a>
+            <ul class="mega-nav-content__children">
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Voluptate velit esse</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Cillum dolore</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Fugiat nulla pariatur</span></a></li>
+            </ul>
+          </li>
+          <li class="mega-nav-content__item" data-icon="users">
+            <a href="#"><span class="mega-nav-content__title">Voluptate velit</span><span class="mega-nav-content__desc">Esse cillum dolore</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="shield">
+            <a href="#"><span class="mega-nav-content__title">Fugiat nulla</span><span class="mega-nav-content__desc">Pariatur excepteur</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="mail">
+            <a href="#"><span class="mega-nav-content__title">Sint occaecat</span><span class="mega-nav-content__desc">Cupidatat non proident</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="puzzle">
+            <a href="#"><span class="mega-nav-content__title">Sunt in culpa</span><span class="mega-nav-content__desc">Qui officia deserunt</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="life">
+            <a href="#"><span class="mega-nav-content__title">Mollit anim</span><span class="mega-nav-content__desc">Id est laborum</span></a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mega-nav-content__menu" data-id="style-5" data-label="Compact icons" data-type="compact-icon">
+        <ul class="mega-nav-content__items">
+          <li class="mega-nav-content__item" data-icon="rocket">
+            <a href="#"><span class="mega-nav-content__title">Lorem ipsum dolor</span></a>
+            <ul class="mega-nav-content__children">
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Sit amet consectetur</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Adipiscing elit sed</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Do eiusmod tempor</span></a></li>
+            </ul>
+          </li>
+          <li class="mega-nav-content__item" data-icon="code">
+            <a href="#"><span class="mega-nav-content__title">Sit amet consectetur</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="layers">
+            <a href="#"><span class="mega-nav-content__title">Adipiscing elit sed</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="terminal">
+            <a href="#"><span class="mega-nav-content__title">Do eiusmod tempor</span></a>
+          </li>
+          <li class="mega-nav-content__item" data-icon="puzzle">
+            <a href="#"><span class="mega-nav-content__title">Incididunt ut labore</span></a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mega-nav-content__menu" data-id="style-6" data-label="Compact links" data-type="compact-text">
+        <ul class="mega-nav-content__items">
+          <li class="mega-nav-content__item">
+            <a href="#"><span class="mega-nav-content__title">Lorem ipsum dolor sit</span></a>
+            <ul class="mega-nav-content__children">
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Amet consectetur</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Adipiscing elit sed</span></a></li>
+              <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Do eiusmod tempor</span></a></li>
+            </ul>
+          </li>
+          <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Amet consectetur</span></a></li>
+          <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Adipiscing elit sed do</span></a></li>
+          <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Eiusmod tempor incididunt</span></a></li>
+          <li class="mega-nav-content__item"><a href="#"><span class="mega-nav-content__title">Ut labore et dolore</span></a></li>
+        </ul>
+      </section>
+    </div>
+
     <div class="floating-mega-nav__bar">
       <a href="#" class="floating-mega-nav__logo" aria-label="Home">Logo</a>
 
       <ul class="floating-mega-nav__parents" id="floating-mega-nav-parents"></ul>
 
       <div class="floating-mega-nav__actions">
-        <a href="#" class="btn btn--ghost btn--sm">Secondary</a>
-        <a href="#" class="btn btn--primary btn--sm">Primary</a>
+        <a href="https://github.com/nathandailo/Morphing-Mega-Menu" class="btn btn--ghost btn--sm">GitHub</a>
+        <a href="#docs" class="btn btn--primary btn--sm">Learn</a>
       </div>
 
       <div class="floating-mega-nav__mobile-controls">
@@ -189,8 +399,8 @@
       </div>
 
       <div class="floating-mega-nav__mobile-actions">
-        <a href="#" class="btn btn--ghost">Secondary</a>
-        <a href="#" class="btn btn--primary">Primary</a>
+        <a href="https://github.com/nathandailo/Morphing-Mega-Menu" class="btn btn--ghost">GitHub</a>
+        <a href="#docs" class="btn btn--primary">Learn</a>
       </div>
     </div>
   </nav>

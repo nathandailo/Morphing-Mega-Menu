@@ -300,6 +300,12 @@ ul {
   font-size: 0.875rem;
 }
 
+.site-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .site-footer__link {
   color: inherit;
   text-decoration: underline;

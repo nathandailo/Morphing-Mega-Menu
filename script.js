@@ -23,165 +23,65 @@
 
   /* Menu data */
 
-  const MEGA_MENU_DATA = [
-    {
-      id: 'style-1',
-      label: 'Image grid',
-      type: 'image-grid',
-      items: [
-        {
-          title: 'Lorem ipsum',
-          desc: 'Dolor sit amet consectetur',
-          image: 'grad-1',
-          children: [
-            { title: 'Adipiscing elit sed' },
-            { title: 'Do eiusmod tempor' },
-            { title: 'Incididunt ut labore' },
-          ],
-        },
-        { title: 'Adipiscing elit', desc: 'Sed do eiusmod tempor', image: 'grad-2' },
-        { title: 'Incididunt ut', desc: 'Labore et dolore magna', image: 'grad-3' },
-        { title: 'Aliqua enim', desc: 'Ad minim veniam quis', image: 'grad-4' },
-        { title: 'Nostrud exercitation', desc: 'Ullamco laboris nisi', image: 'grad-5' },
-        { title: 'Aliquip ex ea', desc: 'Commodo consequat duis', image: 'grad-6' },
-        { title: 'Aute irure dolor', desc: 'In reprehenderit voluptate', image: 'grad-7' },
-        { title: 'Velit esse cillum', desc: 'Fugiat nulla pariatur', image: 'grad-8' },
-      ],
-    },
-    {
-      id: 'style-2',
-      label: 'CTA + image grid',
-      type: 'cta-image-grid',
-      cta: {
-        heading: 'Lorem ipsum dolor',
-        body: 'Sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        linkLabel: 'Lorem ipsum dolor',
-        href: '#',
-      },
-      items: [
-        {
-          title: 'Excepteur sint',
-          desc: 'Occaecat cupidatat non',
-          image: 'grad-3',
-          children: [
-            { title: 'Proident sunt in' },
-            { title: 'Culpa qui officia' },
-            { title: 'Deserunt mollit anim' },
-          ],
-        },
-        { title: 'Proident sunt', desc: 'In culpa qui officia', image: 'grad-5' },
-        { title: 'Deserunt mollit', desc: 'Anim id est laborum', image: 'grad-6' },
-        { title: 'Sed ut perspiciatis', desc: 'Unde omnis iste natus', image: 'grad-2' },
-        { title: 'Error sit voluptatem', desc: 'Accusantium doloremque', image: 'grad-4' },
-        { title: 'Laudantium totam', desc: 'Rem aperiam eaque ipsa', image: 'grad-7' },
-      ],
-    },
-    {
-      id: 'style-3',
-      label: 'Icon grid',
-      type: 'icon-grid',
-      items: [
-        { title: 'Lorem ipsum', desc: 'Dolor sit amet', icon: 'book' },
-        { title: 'Consectetur', desc: 'Adipiscing elit', icon: 'code' },
-        {
-          title: 'Sed do eiusmod',
-          desc: 'Tempor incididunt',
-          icon: 'layers',
-          // Experimental: this level-3 view keeps the level-2 icon-grid
-          // layout (same size/position, no compact morph) instead of the
-          // usual compact-dropdown drill-in -- see openSubmenu.
-          matchParentStyle: true,
-          children: [
-            { title: 'Magna aliqua', desc: 'Configuration options', icon: 'gear' },
-            { title: 'Enim ad minim', desc: 'Analytics overview', icon: 'chart' },
-            { title: 'Veniam quis nostrud', desc: 'Notifications center', icon: 'mail' },
-            { title: 'Exercitation ullamco', desc: 'Developer console', icon: 'terminal' },
-          ],
-        },
-        { title: 'Ut labore', desc: 'Et dolore magna', icon: 'puzzle' },
-        { title: 'Aliqua enim', desc: 'Ad minim veniam', icon: 'users' },
-        {
-          title: 'Quis nostrud',
-          desc: 'Exercitation ullamco',
-          icon: 'map',
-          children: [
-            { title: 'Laboris nisi ut' },
-            { title: 'Aliquip ex ea' },
-            { title: 'Commodo consequat' },
-          ],
-        },
-        { title: 'Laboris nisi', desc: 'Ut aliquip ex ea', icon: 'rocket' },
-        { title: 'Commodo', desc: 'Consequat duis aute', icon: 'shield' },
-      ],
-    },
-    {
-      id: 'style-4',
-      label: 'CTA + icon grid',
-      type: 'cta-icon-grid',
-      cta: {
-        heading: 'Lorem ipsum dolor',
-        body: 'Sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        linkLabel: 'Lorem ipsum dolor',
-        href: '#',
-      },
-      items: [
-        {
-          title: 'Irure dolor',
-          desc: 'In reprehenderit',
-          icon: 'star',
-          children: [
-            { title: 'Voluptate velit esse' },
-            { title: 'Cillum dolore' },
-            { title: 'Fugiat nulla pariatur' },
-          ],
-        },
-        { title: 'Voluptate velit', desc: 'Esse cillum dolore', icon: 'users' },
-        { title: 'Fugiat nulla', desc: 'Pariatur excepteur', icon: 'shield' },
-        { title: 'Sint occaecat', desc: 'Cupidatat non proident', icon: 'mail' },
-        { title: 'Sunt in culpa', desc: 'Qui officia deserunt', icon: 'puzzle' },
-        { title: 'Mollit anim', desc: 'Id est laborum', icon: 'life' },
-      ],
-    },
-    {
-      id: 'style-5',
-      label: 'Compact icons',
-      type: 'compact-icon',
-      items: [
-        {
-          title: 'Lorem ipsum dolor',
-          icon: 'rocket',
-          children: [
-            { title: 'Sit amet consectetur' },
-            { title: 'Adipiscing elit sed' },
-            { title: 'Do eiusmod tempor' },
-          ],
-        },
-        { title: 'Sit amet consectetur', icon: 'code' },
-        { title: 'Adipiscing elit sed', icon: 'layers' },
-        { title: 'Do eiusmod tempor', icon: 'terminal' },
-        { title: 'Incididunt ut labore', icon: 'puzzle' },
-      ],
-    },
-    {
-      id: 'style-6',
-      label: 'Compact links',
-      type: 'compact-text',
-      items: [
-        {
-          title: 'Lorem ipsum dolor sit',
-          children: [
-            { title: 'Amet consectetur' },
-            { title: 'Adipiscing elit sed' },
-            { title: 'Do eiusmod tempor' },
-          ],
-        },
-        { title: 'Amet consectetur' },
-        { title: 'Adipiscing elit sed do' },
-        { title: 'Eiusmod tempor incididunt' },
-        { title: 'Ut labore et dolore' },
-      ],
-    },
-  ];
+  // The menu content lives as real markup in #mega-nav-content (see
+  // index.html) so it's visible in the page source and editable as plain
+  // HTML. This parses that markup into the same shape the rest of this
+  // file expects, then removes the source markup from the DOM.
+  function parseMenuData() {
+    const sourceEl = document.getElementById('mega-nav-content');
+    const menus = Array.from(sourceEl.querySelectorAll(':scope > .mega-nav-content__menu')).map((menuEl) => {
+      const menu = {
+        id: menuEl.dataset.id,
+        label: menuEl.dataset.label,
+        type: menuEl.dataset.type,
+      };
+
+      const ctaEl = menuEl.querySelector(':scope > .mega-nav-content__cta');
+      if (ctaEl) menu.cta = parseCta(ctaEl);
+
+      const itemsEl = menuEl.querySelector(':scope > .mega-nav-content__items');
+      menu.items = Array.from(itemsEl.children).map(parseMenuItem);
+
+      return menu;
+    });
+    sourceEl.remove();
+    return menus;
+  }
+
+  function parseCta(ctaEl) {
+    const link = ctaEl.querySelector('.mega-nav-content__cta-link');
+    return {
+      heading: ctaEl.querySelector('.mega-nav-content__cta-heading').textContent.trim(),
+      body: ctaEl.querySelector('.mega-nav-content__cta-body').textContent.trim(),
+      linkLabel: link.textContent.trim(),
+      href: link.getAttribute('href') || '#',
+    };
+  }
+
+  function parseMenuItem(li) {
+    const link = li.querySelector(':scope > a');
+    const item = {
+      title: link.querySelector('.mega-nav-content__title').textContent.trim(),
+      href: link.getAttribute('href') || '#',
+    };
+
+    const descEl = link.querySelector('.mega-nav-content__desc');
+    if (descEl) item.desc = descEl.textContent.trim();
+
+    if (li.dataset.icon) item.icon = li.dataset.icon;
+    if (li.dataset.image) item.image = li.dataset.image;
+    // Experimental: this level-3 view keeps the level-2 icon-grid layout
+    // (same size/position, no compact morph) instead of the usual
+    // compact-dropdown drill-in -- see openSubmenu.
+    if (li.dataset.matchParentStyle !== undefined) item.matchParentStyle = true;
+
+    const childrenEl = li.querySelector(':scope > .mega-nav-content__children');
+    if (childrenEl) item.children = Array.from(childrenEl.children).map(parseMenuItem);
+
+    return item;
+  }
+
+  const MEGA_MENU_DATA = parseMenuData();
 
   const COMPACT_TYPES = new Set(['compact-icon', 'compact-text']);
   const COMPACT_WIDTH = 320;
@@ -284,7 +184,7 @@
 
   function buildMegaCard(item) {
     const a = document.createElement('a');
-    a.href = '#';
+    a.href = item.href || '#';
     a.className = 'mega-card';
 
     const thumb = document.createElement('div');
@@ -314,7 +214,7 @@
 
   function buildIconLink(item) {
     const a = document.createElement('a');
-    a.href = '#';
+    a.href = item.href || '#';
     a.className = 'icon-link';
 
     const icon = document.createElement('span');
@@ -358,7 +258,7 @@
 
   function buildCompactTextLink(item) {
     const a = document.createElement('a');
-    a.href = '#';
+    a.href = item.href || '#';
     a.className = 'compact-text-link';
 
     const text = document.createElement('span');

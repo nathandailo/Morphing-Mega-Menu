@@ -1,5 +1,7 @@
 # Morphing Mega Menu
 
+[Live demo](https://morphing-mega-menu.nathandailo.com)
+
 A floating mega menu prototype. The nav stays fixed above the page, and hovering a parent opens a panel "shell" that morphs in size and position depending on the submenu layout, sliding content in and out as you move between parents.
 
 ## Features
