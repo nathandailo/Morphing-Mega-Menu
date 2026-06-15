@@ -69,36 +69,6 @@ ul {
   text-align: center;
 }
 
-.hero__scroll-down {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: transparent;
-  color: #ffffff;
-  cursor: pointer;
-  appearance: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.hero__scroll-down:hover,
-.hero__scroll-down:focus-visible {
-  background: rgba(255, 255, 255, 0.14);
-  outline: none;
-}
-
-.hero__scroll-down svg {
-  width: 20px;
-  height: 20px;
-}
-
 .hero__inner {
   width: min(var(--nav-max-width), calc(100vw - 32px));
   margin: 0 auto;

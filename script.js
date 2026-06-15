@@ -1099,15 +1099,17 @@
       closeMobileMenu();
     });
 
-    // Hero scroll-down button -- eases the page down to the docs section.
-    const scrollDownBtn = document.getElementById('hero-scroll-down');
+    // "Learn" buttons -- ease the page down to the docs section.
     const docsEl = document.getElementById('docs');
-    scrollDownBtn.addEventListener('click', () => {
-      if (prefersReducedMotion) {
-        docsEl.scrollIntoView();
-        return;
-      }
-      animateScrollTo(docsEl.getBoundingClientRect().top + window.scrollY, { duration: 1, ease: 'power2.inOut' });
+    document.querySelectorAll('a[href="#docs"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (prefersReducedMotion) {
+          docsEl.scrollIntoView();
+          return;
+        }
+        animateScrollTo(docsEl.getBoundingClientRect().top + window.scrollY, { duration: 1, ease: 'power2.inOut' });
+      });
     });
 
     // License modal
