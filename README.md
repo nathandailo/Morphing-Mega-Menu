@@ -21,14 +21,6 @@ A floating mega menu prototype. The nav stays fixed above the page, and hovering
 
 Plain HTML, CSS, and JS. No build step. Uses GSAP for animation.
 
-## Running locally
-
-Open `index.html` in a browser, or serve the directory:
-
-```bash
-npx serve .
-```
-
 ## License
 
 MIT, see LICENSE.
