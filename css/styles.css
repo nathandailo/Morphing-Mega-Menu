@@ -846,7 +846,7 @@ ul {
 .thumb--grad-6,
 .thumb--grad-7,
 .thumb--grad-8 {
-  background-image: url('placeholder-image.jpg');
+  background-image: url('../images/placeholder-image.jpg');
   background-color: #4a4a52;
 }
 
